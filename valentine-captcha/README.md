@@ -1,73 +1,50 @@
-# React + TypeScript + Vite
+# Valentine Captcha
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a "Captcha" style web application for Valentine's Day.
 
-Currently, two official plugins are available:
+## 🚀 How to Install and Run
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+To run this project, you need [Node.js](https://nodejs.org/) installed.
 
-## React Compiler
+1.  Open your terminal inside the project folder (`valentine-captcha`).
+2.  Install dependencies:
+    ```bash
+    npm install
+    ```
+3.  Start the project in development mode:
+    ```bash
+    npm run dev
+    ```
+4.  Open the link shown in the terminal (usually `http://localhost:5173`).
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🖼️ Setting Up Images
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+This project requires your own photos as they are not included in the repository.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### How many photos do you need?
+You need **19 images**:
+*   **18 images** (files `1.jpg` – `18.jpg`) — for the main captcha grid (3 columns × 6 rows).
+*   **1 image** (file `19.jpg`) — the small target icon (example of what to look for).
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### Requirements for photos
+*   **Format**: `.jpg`
+*   **Ratio**: Square images work best (e.g., 500x500 pixels) to display correctly in grid cells. If not square, they will be automatically center-cropped.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### How to add photos?
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+There are two ways to do this:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+#### Method 1: Automatically (Recommended)
+In the parent folder (where this project folder is located), there is a script named `setup_images.ps1`.
+1.  Prepare 19 `.jpg` files and name them `photo_1_...jpg`, `photo_2_...jpg`, etc.
+2.  Place these photos in the same folder as `setup_images.ps1`.
+3.  Run `setup_images.ps1` (right-click -> "Run with PowerShell").
+4.  The script will automatically rename and copy the files into the `public/images` folder inside the project.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+#### Method 2: Manually
+1.  Go to `valentine-captcha` -> `public`.
+2.  Create an `images` folder (if it doesn't exist).
+3.  Copy your 19 photos there.
+4.  Manually rename them to `1.jpg`, `2.jpg`, ..., `19.jpg`.
