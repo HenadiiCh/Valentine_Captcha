@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+/* Custom romantic background animation if needed, or use Tailwind classes */
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #fce7f3;
+  /* pink-100 */
+}
