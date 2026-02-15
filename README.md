@@ -48,3 +48,7 @@ In the parent folder (where this project folder is located), there is a script n
 2.  Create an `images` folder (if it doesn't exist).
 3.  Copy your 19 photos there.
 4.  Manually rename them to `1.jpg`, `2.jpg`, ..., `19.jpg`.
+
+## 🔒 Security
+
+For security policy, please see [SECURITY.md](SECURITY.md).
